@@ -61,6 +61,8 @@ secret-password.txt:  18 bytes
 See also:
 
 - [kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+- [How To Migrate a Docker Compose Workflow to Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-migrate-a-docker-compose-workflow-to-kubernetes)
+- [kompose.io](https://kompose.io/)
 
 ## Links
 
