@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  example:
+    image: alpine
+    secrets:
+        - keystore-password
+        - secret-password
+    # keep container open, http://bigdatums.net/2017/11/07/how-to-keep-docker-containers-running/
+    command: sh -c "
+        cat /run/secrets/keystore-password
+        && (cat /run/secrets/secret-password | true)
+        && tail -f /dev/null
+      "
+
+secrets:
+    keystore-password:
+        file: ./secrets/secret-password.txt
+    secret-password: # externals need `docker stack`, either swarm or kubernetes
+        external: true
